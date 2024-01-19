@@ -6,6 +6,16 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#ffffff',
+      'head': '#0C9488',
+      'dark-head': '#10172A',
+      'dark-body': '#334154',
+      'bubble-gum': '#ff77e9',
+      'bermuda': '#78dcca',
+    },
     extend: {},
   },
   daisyui: {
@@ -13,3 +23,7 @@ module.exports = {
   },
   plugins: [require("daisyui")],
 }
+
+
+
+
