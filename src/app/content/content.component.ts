@@ -1,5 +1,6 @@
+// content.component.ts
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
+import { themeChange } from 'theme-change';
 
 @Component({
   selector: 'app-content',
@@ -7,5 +8,7 @@ import { HeaderComponent } from '../header/header.component';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-
+  toggleTheme() {
+    themeChange();
+  }
 }
