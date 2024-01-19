@@ -1,7 +1,5 @@
 // content.component.ts
 import { Component, HostBinding } from '@angular/core';
-import {ContentDetailComponent} from '../content-detail/content-detail.component';
-
 
 @Component({
   selector: 'app-content',
@@ -14,7 +12,5 @@ export class ContentComponent {
   @HostBinding('class.dark') get mode() { 
     return this.darkMode;
 }
-
-
 
 }
