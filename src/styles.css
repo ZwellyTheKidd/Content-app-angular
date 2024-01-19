@@ -3,20 +3,3 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles.css */
-:root {
-    --my-color: #fff;
-  }
-  
-  [data-theme='dark'] {
-    --my-color: #000;
-  }
-  
-  [data-theme='pink'] {
-    --my-color: #ffabc8;
-  }
-  
-  body {
-    background-color: var(--my-color);
-  }
-  

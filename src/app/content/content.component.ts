@@ -1,6 +1,7 @@
 // content.component.ts
-import { Component } from '@angular/core';
-import { themeChange } from 'theme-change';
+import { Component, HostBinding } from '@angular/core';
+import {ContentDetailComponent} from '../content-detail/content-detail.component';
+
 
 @Component({
   selector: 'app-content',
@@ -8,7 +9,12 @@ import { themeChange } from 'theme-change';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-  toggleTheme() {
-    themeChange();
-  }
+  darkMode = false;
+
+  @HostBinding('class.dark') get mode() { 
+    return this.darkMode;
+}
+
+
+
 }
