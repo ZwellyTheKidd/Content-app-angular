@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { HeaderComponent } from './header/header.component';
+import { ThemeService } from './theme.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

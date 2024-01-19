@@ -1,18 +1,23 @@
 // header.component.ts
-
-import { Component, HostBinding } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
-  darkMode = false;
+export class HeaderComponent implements OnInit {
+  darkMode!: boolean;
 
-  @HostBinding('class.dark') get mode() { 
-    return this.darkMode;
-}
+  constructor(public themeService: ThemeService) {}
 
+  ngOnInit() {
+    // Initialize darkMode property with the current theme state
+    this.darkMode = this.themeService.getCurrentDarkModeState();
+  }
+
+  toggleDarkMode() {
+    this.themeService.toggleDarkMode();
+  }
 }
