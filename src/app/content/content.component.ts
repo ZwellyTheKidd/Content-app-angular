@@ -7,10 +7,10 @@ import { Component, HostBinding } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-  darkMode = false;
+//   darkMode = false;
 
-  @HostBinding('class.dark') get mode() { 
-    return this.darkMode;
-}
+//   @HostBinding('class.dark') get mode() { 
+//     return this.darkMode;
+// }
 
 }

@@ -1,6 +1,6 @@
 // header.component.ts
 
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 
 @Component({
@@ -9,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  darkMode = false;
+
+  @HostBinding('class.dark') get mode() { 
+    return this.darkMode;
+}
 
 }
