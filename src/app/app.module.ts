@@ -8,6 +8,7 @@ import { ContentComponent } from './content/content.component';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { HeaderComponent } from './header/header.component';
 import { ThemeService } from './theme.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ThemeService } from './theme.service';
     ContentComponent,
     ContentDetailComponent,
     HeaderComponent,
+    FooterComponent,
  
   ],
   imports: [
