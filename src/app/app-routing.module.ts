@@ -7,8 +7,8 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: ContentComponent },
-  { path: 'content', component: ContentDetailComponent },
+  { path: 'home',title:"home", component: ContentComponent },
+  { path: 'content',title:"content", component: ContentDetailComponent },
 
 ];
 
