@@ -13,8 +13,10 @@ module.exports = {
       'head': '#0C9488',
       'dark-head': '#10172A',
       'dark-body': '#334154',
-      'bubble-gum': '#ff77e9',
-      'bermuda': '#78dcca',
+      'dark-text': '#ffffff',
+      'dark-box': '#293442',
+      'dark-btn': '#D2D2D2',
+      
     },
     extend: {},
   },
