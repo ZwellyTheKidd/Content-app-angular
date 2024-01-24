@@ -9,6 +9,7 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
 import { HeaderComponent } from './header/header.component';
 import { ThemeService } from './theme.service';
 import { FooterComponent } from './footer/footer.component';
+import { ContentNewComponent } from './content-new/content-new.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     ContentDetailComponent,
     HeaderComponent,
     FooterComponent,
+    ContentNewComponent,
  
   ],
   imports: [
