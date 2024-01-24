@@ -1,8 +1,9 @@
 
+<div class=" h-screen flex flex-col">
 <app-header/>
 
 
-<div class="flex flex-col h-screen min-w-full px-40 dark:bg-dark-body pb-40 pt-10">
+<div class="flex flex-col flex-grow px-40 dark:bg-dark-body pb-40 pt-10 overflow-scroll">
     
     
     <div class="flex gap-2 flex-wrap dark:text-white">
@@ -14,17 +15,17 @@
     
         <div class="w-full border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 dark:border-dark-box bg-white dark:bg-dark-box rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
           
-          <div class="mb-8">
+          <div class="flex flex-wrap gap-2">
             <input id="title" placeholder="Title"/>
-            <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+            <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your description here..."></textarea>
           </div>
     
-          <div class="flex flex-wrap justify-around">
+          <div class="flex flex-wrap justify-around pt-2">
             <div><span class="font-bold"> status </span>  :<input id="status" placeholder="status"/></div>
             <div><span class="font-bold"> contentType </span>  :<input id="type" placeholder="type"/></div>
           </div>
     
-          <div class="flex flex-wrap justify-around ">
+          <div class="flex flex-wrap justify-around pt-2">
             <div><span class="font-bold"> created </span>  :2023-01-27</div>
             <div><span class="font-bold"> updated </span>  :2023-01-27</div>
           </div>
@@ -32,7 +33,7 @@
           <div class="py-4"><span class="font-bold"> url </span><a href="#" style="color:royalblue;"><input id="url" placeholder="Url"/></a></div>
     
           <div class="flex justify-end gap-2">
-            <button class="btn btn-outline btn-warning">Cancel</button>
+            <a routerLink="/"><button class="btn btn-outline btn-warning">Cancel</button></a>
             <button class="btn btn-outline btn-success">Done</button>
           </div>
     
@@ -47,11 +48,7 @@
 </div>
 
 
-<div style="
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-">
-  <app-footer/>
+<div class="flex-shrink-0">
+  <app-footer />
+</div>
 </div>
