@@ -23,8 +23,8 @@ export class ContentService {
   getContent(): Observable<Content[]> {
     return this.http.get<any>(this.contentURL)
       .pipe(
-        map(response => response.products), 
-        tap(_ => this.log('fetched products')),
+        map(response => response), 
+        tap(_ => this.log('fetched Contents')),
         catchError(this.handleError<Content[]>('getContent', []))
       );
   }

@@ -14,7 +14,7 @@ export class ContentComponent implements OnDestroy {
   private subscription: Subscription;
 
   
-  products: Content[] = [];
+  contents: Content[] = [];
 
   // Local variable to hold the current dark mode state
   isDarkMode!: boolean;
@@ -36,13 +36,13 @@ export class ContentComponent implements OnDestroy {
 
   getProducts(): void {
     this.ContentService.getContent()
-      .subscribe(products => {
-        console.log('Product Data:', products);
+      .subscribe(contents => {
+        console.log('Product Data:', contents);
 
-        if (Array.isArray(products)) {
-          this.products = products;
+        if (Array.isArray(contents)) {
+          this.contents = contents;
         } else {
-          console.error('Invalid response format. Expected an array of products.');
+          console.error('Invalid response format. Expected an array of Contents.');
         }
       });
   }
