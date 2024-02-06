@@ -30,11 +30,11 @@ export class ContentComponent implements OnDestroy {
 
 
   ngOnInit(): void {
-    this.getContent();
+    this.getProducts();
 
   }
 
-  getContent(): void {
+  getProducts(): void {
     this.ContentService.getContent()
       .subscribe(products => {
         console.log('Product Data:', products);

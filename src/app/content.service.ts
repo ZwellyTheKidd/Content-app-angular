@@ -25,13 +25,13 @@ export class ContentService {
       .pipe(
         map(response => response.products), 
         tap(_ => this.log('fetched products')),
-        catchError(this.handleError<Content[]>('getProducts', []))
+        catchError(this.handleError<Content[]>('getContent', []))
       );
   }
 
 
 
-  
+
   private log(message: string): void {
     console.log(message);
   }
