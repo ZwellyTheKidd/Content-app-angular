@@ -44,33 +44,9 @@
 </div>
 
 
-
-
-
-
-<div *ngFor="let content of contents">
-  <div>{{content.id}}</div>
-  <div>{{content.title}}</div>
-  <div>{{content.desc}}</div>
-</div>
-
-id: number,
-title: string,
-desc: string,
-status: string,
-contentType: string,
-dateCreated: Date,
-dateUpdated: Date,
-url: string,
-
-
-
-
-
-
 <div class="flex gap-2 flex-wrap dark:text-white" *ngFor="let content of contents">
 
-  <div class="max-w-sm w-full lg:max-w-full lg:flex ">
+  <div class="max-w-sm w-full lg:max-w-full lg:flex mt-2">
 
     <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-tl lg:rounded-l text-center overflow-hidden" style="background-image: url('https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/302284214/original/d7934bb3f59a9235e1b86a092f1f225dd5c05f6e/professional-article-writing-services-for-your-blog-website-or-business.jpg')" title="Woman holding a mug">
     </div>
@@ -103,11 +79,11 @@ url: string,
 
   </div>
 
+</div>
 
   <!-- no content -->
-  
-  <div class="flex items-center justify-center w-full"><img src="https://cocognito.com/static/images/no_content.png" alt=""></div>
-  
+<div class="flex items-center justify-center w-full" *ngIf="!contents || contents.length === 0">
+  <img src="https://cocognito.com/static/images/no_content.png" alt="">
 </div>
 
 
@@ -121,7 +97,7 @@ url: string,
 
 
 
-<div class="max-w-sm w-full lg:max-w-full lg:flex hidden">
+<div class="flex max-w-sm w-full lg:max-w-full lg:flex hidden">
 
   <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-tl lg:rounded-l text-center overflow-hidden" style="background-image: url('https://seoghana.com/wp-content/uploads/2019/10/960x0.jpg')" title="Woman holding a mug">
   </div>
