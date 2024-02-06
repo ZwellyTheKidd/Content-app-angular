@@ -1,69 +1,157 @@
-
 <div class=" h-screen flex flex-col">
-    <app-header/>
-    
-    
-    <div class="flex flex-col flex-grow px-[5%] dark:bg-dark-body pb-40 pt-10">
-        
-        
-        <div class="flex gap-2 flex-wrap dark:text-white">
-        
-          <div class="max-w-sm w-full lg:max-w-full lg:flex">
-        
-            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-tl lg:rounded-l text-center overflow-hidden" style="background-image: url('https://imgscf.slidemembers.com/docs/1/1/302/exploded_pie_chart_cyber_security_301568.jpg')" title="Woman holding a mug">
-            </div>
-        
-            <div class="w-full border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 dark:border-dark-box bg-white dark:bg-dark-box rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-              
-              <div class="flex flex-wrap gap-2">
-                <input class="dark:bg-dark-body dark:text-white rounded-lg p-2" id="title" placeholder="Title"/>
-                <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-dark-body dark:text-white  dark:placeholder-gray-400 dark:text-white " placeholder="Write your description here..."></textarea>
-              </div>
-        
-              <div class="flex flex-wrap justify-around pt-2">
+  <app-header />
 
-                <div class="dropdown dropdown-bottom">
-                  <div tabindex="0" role="button" class="btn m-1 dark:bg-dark-btn">Type</div>
-                  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-dark-body">
-                    <li><a>ARTICLE</a></li>
-                    <li><a>VIDEO</a></li>
-                    <li><a>COURSE</a></li>
-                    <li><a> CONFERENCE_TALK</a></li>
-                  </ul>
-                </div>
-      
-                <div class="dropdown dropdown-end">
-                  <div tabindex="0" role="button" class="btn m-1 dark:bg-dark-btn">Status</div>
-                  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-dark-body">
-                    <li><a>IDEA</a></li>
-                    <li><a>COMPLETED</a></li>
-                    <li><a>PUBLISHED</a></li>
-                    <li><a>IN_PROGRESS</a></li>
-                  </ul>
-                </div>
 
-              </div>
-        
-              <div class="py-4"><span class="font-bold"> url </span><a href="#" style="color:royalblue;"><input class="dark:bg-dark-body dark:text-white rounded-lg p-2" id="url" placeholder="Url"/></a></div>
-        
-              <div class="flex justify-end gap-2">
-                <a routerLink="/"><button class="btn btn-outline btn-warning">Cancel</button></a>
-                <button class="btn btn-outline btn-success">Done</button>
-              </div>
-        
-        
-            </div>
-        
-          </div>
-    
+
+  <div class="flex flex-col flex-grow px-[5%] dark:bg-dark-body pb-40 pt-10">
+    <div class="flex gap-2 flex-wrap dark:text-white">
+      <div class="max-w-sm w-full lg:max-w-full lg:flex">
+        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-tl lg:rounded-l text-center overflow-hidden"
+          style="background-image: url('https://imgscf.slidemembers.com/docs/1/1/302/exploded_pie_chart_cyber_security_301568.jpg')"
+          title="Woman holding a mug">
         </div>
-        
-        
+        <div
+          class="w-full border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 dark:border-dark-box bg-white dark:bg-dark-box rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+          <div class="flex flex-wrap gap-2">
+            <input class="dark:bg-dark-body dark:text-white rounded-lg p-2" [(ngModel)]="newContent.title" placeholder="Title" />
+            <textarea [(ngModel)]="newContent.desc" rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-dark-body dark:text-white  dark:placeholder-gray-400 dark:text-white "
+              placeholder="Write your description here..."></textarea>
+          </div>
+          <div class="flex flex-wrap justify-around pt-2">
+            <select class="btn m-1 dark:bg-dark-btn" [(ngModel)]="newContent.contentType">
+              <option value="ARTICLE">ARTICLE</option>
+              <option value="VIDEO">VIDEO</option>
+              <option value="COURSE">COURSE</option>
+              <option value="CONFERENCE_TALK">CONFERENCE_TALK</option>
+            </select>
+            <select class="btn m-1 dark:bg-dark-btn" [(ngModel)]="newContent.status">
+              <option value="IDEA">IDEA</option>
+              <option value="COMPLETED">COMPLETED</option>
+              <option value="PUBLISHED">PUBLISHED</option>
+              <option value="IN_PROGRESS">IN_PROGRESS</option>
+            </select>
+          </div>
+          <div class="py-4">
+            <span class="font-bold"> url </span>
+            <p style="color:royalblue;"><input class="dark:bg-dark-body dark:text-white rounded-lg p-2" [(ngModel)]="newContent.url" placeholder="Url" /></p>
+          </div>
+          <div class="flex justify-end gap-2">
+            <a routerLink="/"><button class="btn btn-outline btn-warning">Cancel</button></a>
+            <button class="btn btn-outline btn-success" (click)="onDoneClick()">Done</button>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    
-    <div class="flex-shrink-0">
-      <app-footer />
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  <div class="flex flex-col flex-grow px-[5%] dark:bg-dark-body pb-40 pt-10">
+
+
+    <div class="flex gap-2 flex-wrap dark:text-white">
+
+      <div class="max-w-sm w-full lg:max-w-full lg:flex">
+
+        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-tl lg:rounded-l text-center overflow-hidden"
+          style="background-image: url('https://imgscf.slidemembers.com/docs/1/1/302/exploded_pie_chart_cyber_security_301568.jpg')"
+          title="Woman holding a mug">
+        </div>
+
+        <div
+          class="w-full border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 dark:border-dark-box bg-white dark:bg-dark-box rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+
+          <div class="flex flex-wrap gap-2">
+            <input class="dark:bg-dark-body dark:text-white rounded-lg p-2" id="title" placeholder="Title" />
+            <textarea id="description" rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-dark-body dark:text-white  dark:placeholder-gray-400 dark:text-white "
+              placeholder="Write your description here..."></textarea>
+          </div>
+
+          <div class="flex flex-wrap justify-around pt-2">
+
+            <div class="dropdown dropdown-bottom">
+              <div tabindex="0" role="button" class="btn m-1 dark:bg-dark-btn">Type</div>
+              <ul tabindex="0"
+                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-dark-body">
+                <li><a (click)="setTypeValue('ARTICLE')">ARTICLE</a></li>
+                <li><a (click)="setTypeValue('VIDEO')">VIDEO</a></li>
+                <li><a (click)="setTypeValue('COURSE')">COURSE</a></li>
+                <li><a (click)="setTypeValue('CONFERENCE_TALK')">CONFERENCE_TALK</a></li>
+              </ul>
+           
+              <input type="hidden" id="typeInput" />
+            </div>
+
+            <div class="dropdown dropdown-end">
+              <div tabindex="0" role="button" class="btn m-1 dark:bg-dark-btn">Status</div>
+              <ul tabindex="0"
+                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-dark-body">
+                <li><a (click)="setStatusValue('IDEA')">IDEA</a></li>
+                <li><a (click)="setStatusValue('COMPLETED')">COMPLETED</a></li>
+                <li><a (click)="setStatusValue('PUBLISHED')">PUBLISHED</a></li>
+                <li><a (click)="setStatusValue('IN_PROGRESS')">IN_PROGRESS</a></li>
+              </ul>
+   
+              <input type="hidden" id="statusInput" />
+            </div>
+
+          </div>
+
+          <div class="py-4"><span class="font-bold"> url </span>
+            <p style="color:royalblue;"><input class="dark:bg-dark-body dark:text-white rounded-lg p-2" id="url"
+                placeholder="Url" /></p>
+          </div>
+
+          <div class="flex justify-end gap-2">
+            <a routerLink="/"><button class="btn btn-outline btn-warning">Cancel</button></a>
+            <button class="btn btn-outline btn-success" (click)="onDoneClick()">Done</button>
+          </div>
+
+
+        </div>
+
+      </div>
+
     </div>
-    </div>
-    
+
+
+  </div> -->
+
+
+
+
+
+
+
+  <div class="flex-shrink-0">
+    <app-footer />
+  </div>
+</div>
