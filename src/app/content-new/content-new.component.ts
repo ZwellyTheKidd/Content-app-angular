@@ -14,13 +14,12 @@ export class ContentNewComponent {
   private subscription: Subscription;
 
   newContent: Content = {
-    id: 0,
     title: '',
     desc: '',
     status: '',
     contentType: '',
     dateCreated: new Date(),
-    dateUpdated: new Date(),
+    dateUpdated: null, // Assign null to dateUpdated initially
     url: ''
   };
 
@@ -37,43 +36,33 @@ export class ContentNewComponent {
     });
   }
 
-  setTypeValue(value: string): void {
-    this.newContent.contentType = value;
+  setTypeValue(type: string): void {
+    this.newContent.contentType = type;
   }
 
-  setStatusValue(value: string): void {
-    this.newContent.status = value;
+  // Method to set the content status
+  setStatusValue(status: string): void {
+    this.newContent.status = status;
   }
 
-// TypeScript code for handling "Done" button click event
-onDoneClick(): void {
-  // Gather input values
-  const titleInput = (document.getElementById('title') as HTMLInputElement)?.value || '';
-  const descriptionInput = (document.getElementById('description') as HTMLTextAreaElement)?.value || '';
-  const typeInput = (document.getElementById('typeInput') as HTMLInputElement)?.value || '';
-  const statusInput = (document.getElementById('statusInput') as HTMLInputElement)?.value || '';
-  const urlInput = (document.getElementById('url') as HTMLInputElement)?.value || '';
+  onDoneClick(): void {
+    // Set the dateCreated to the current date
+    this.newContent.dateCreated = new Date();
 
-  // Assign input values to newContent
-  this.newContent.title = titleInput;
-  this.newContent.desc = descriptionInput;
-  this.newContent.contentType = typeInput;
-  this.newContent.status = statusInput;
-  this.newContent.url = urlInput;
-
-  // Call addContent method
-  this.contentService.addContent(this.newContent)
-    .subscribe({
-      next: (addedContent: Content) => {
-        console.log('New content added:', addedContent);
-        // Handle success
-      },
-      error: (error) => {
-        console.error('Error adding new content:', error);
-        // Handle error
-      }
-    });
-}
+    // Call the addContent method
+    this.contentService.addContent(this.newContent)
+      .subscribe({
+        next: (addedContent: Content) => {
+          console.log('New content added:', addedContent);
+          // Handle success
+        },
+        error: (error) => {
+          console.error('Error adding new content:', error);
+          // Handle error
+        }
+      });
+  }
+  
 
 
 

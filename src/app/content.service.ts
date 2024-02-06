@@ -31,10 +31,13 @@ export class ContentService {
 
   // add new content
   addContent(content: Content): Observable<Content> {
-    return this.http.post<Content>(this.contentURL, content, this.httpOptions).pipe(
-      tap((newContent: Content) => this.log(`added content w/ id=${newContent.id}`)),
-      catchError(this.handleError<Content>('addContent'))
-    );
+ // Omit the 'id' property from the content object
+ const { id, ...contentWithoutId } = content;
+
+ return this.http.post<Content>(this.contentURL, contentWithoutId, this.httpOptions).pipe(
+   tap((newContent: Content) => this.log(`added content`)),
+   catchError(this.handleError<Content>('addContent'))
+ );
   }
 
 
